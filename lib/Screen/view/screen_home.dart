@@ -4,6 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 import 'package:travel_ui/Screen/controller/home_controller.dart';
+import 'package:travel_ui/Screen/widget/home_carousal/home_carousal.dart';
+import 'package:travel_ui/Screen/widget/search_bar/search_bar.dart';
 import 'package:travel_ui/core/const/colors.dart';
 import 'package:travel_ui/core/const/size.dart';
 
@@ -28,83 +30,8 @@ class ScreenHome extends StatelessWidget {
                 children: [
                   SearchBar(width: width, height: height),
                   kHeight10,
-                  Stack(
-                    children: [
-                      CarouselSlider.builder(
-                        itemCount: homeContorller.travelImage.length,
-                        itemBuilder: (context, index, realIndex) => Container(
-                          width: width,
-                          height: height * 0.3,
-                          decoration: BoxDecoration(
-                            image: DecorationImage(
-                              image:
-                                  NetworkImage(homeContorller.travelImage[index]),
-                              fit: BoxFit.cover,
-                            ),
-                            borderRadius: BorderRadius.circular(20),
-                          ),
-                        ),
-                        options: CarouselOptions(
-                          height: height * 0.28,
-                          aspectRatio: 16 / 9,
-                          viewportFraction: 1,
-                          initialPage: 0,
-                          enableInfiniteScroll: true,
-                          reverse: false,
-                          autoPlay: true,
-                          autoPlayInterval: const Duration(seconds: 5),
-                          autoPlayAnimationDuration:
-                              const Duration(milliseconds: 800),
-                          autoPlayCurve: Curves.fastOutSlowIn,
-                          enlargeCenterPage: true,
-                          enlargeFactor: 0.3,
-                          onPageChanged: (index, reason) {
-                            homeContorller.changeIndex(index);
-                          },
-                          scrollDirection: Axis.horizontal,
-                        ),
-                      ),
-                      Positioned(
-                        top: height * 0.14,
-                        left: width * 0.05,
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            const Text(
-                              'Run to the Hills',
-                              style: TextStyle(
-                                color: carosultextColor,
-                                fontWeight: FontWeight.bold,
-                              ),
-                            ),
-                            const Text(
-                              "Plan your next trip to South india",
-                              textWidthBasis: TextWidthBasis.longestLine,
-                              maxLines: 2,
-                              overflow: TextOverflow.ellipsis,
-                              textDirection: TextDirection.rtl,
-                              textAlign: TextAlign.justify,
-                              style: TextStyle(color: carosultextColor),
-                            ),
-                            ElevatedButton(
-                                style: ElevatedButton.styleFrom(
-                                    backgroundColor: elevatedColor,
-                                    shape: RoundedRectangleBorder(
-                                        borderRadius: BorderRadius.circular(20)),
-                                    minimumSize:
-                                        Size(width * 0.15, height * 0.05)),
-                                onPressed: () {},
-                                child: const Text(
-                                  'Read the article',
-                                  style: TextStyle(
-                                    color: carosultextColor,
-                                  ),
-                                ))
-                          ],
-                        ),
-                      ),
-                    ],
-                  ),
+                  HomeCarousal(
+                      contorller: homeContorller, width: width, height: height),
                   kHeight5,
                   AnimatedSmoothIndicator(
                     activeIndex: homeContorller.activeIndex,
@@ -149,8 +76,8 @@ class ScreenHome extends StatelessWidget {
                                 decoration: BoxDecoration(
                                   borderRadius: BorderRadius.circular(20),
                                   image: DecorationImage(
-                                      image: NetworkImage(
-                                          homeContorller.gridtravelImage[index]),
+                                      image: NetworkImage(homeContorller
+                                          .gridtravelImage[index]),
                                       fit: BoxFit.cover),
                                 ),
                               ),
@@ -203,48 +130,56 @@ class ScreenHome extends StatelessWidget {
   }
 }
 
-class SearchBar extends StatelessWidget {
-  const SearchBar({
+
+
+class CarousalText extends StatelessWidget {
+  const CarousalText({
     Key? key,
-    required this.width,
     required this.height,
+    required this.width,
   }) : super(key: key);
 
-  final double width;
   final double height;
+  final double width;
 
   @override
   Widget build(BuildContext context) {
-    return TextButton.icon(
-      style: ButtonStyle(
-          alignment: Alignment.centerLeft,
-          backgroundColor:
-              MaterialStateProperty.all(backgroundColor),
-          fixedSize: MaterialStateProperty.all(
-            Size(width, height * 0.1),
-          ),
-          shape: MaterialStateProperty.all(
-            RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(20),
-              side: const BorderSide(
-                color: serchColor,
-                width: 2,
-              ),
+    return Positioned(
+      top: height * 0.14,
+      left: width * 0.05,
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          const Text(
+            'Run to the Hills',
+            style: TextStyle(
+              color: carosultextColor,
+              fontWeight: FontWeight.bold,
             ),
-          )),
-      onPressed: () {},
-      icon: const Icon(
-        Icons.search,
-        color: serchColor,
-        size: 26,
-      ),
-      label: const Text(
-        'Search',
-        style: TextStyle(
-          color: serchColor,
-          fontWeight: FontWeight.bold,
-          fontSize: 18,
-        ),
+          ),
+          const Text(
+            "Plan your next trip to South india",
+            textWidthBasis: TextWidthBasis.longestLine,
+            maxLines: 2,
+            overflow: TextOverflow.ellipsis,
+            textDirection: TextDirection.rtl,
+            textAlign: TextAlign.justify,
+            style: TextStyle(color: carosultextColor),
+          ),
+          ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                  backgroundColor: elevatedColor,
+                  shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(20)),
+                  minimumSize: Size(width * 0.15, height * 0.05)),
+              onPressed: () {},
+              child: const Text(
+                'Read the article',
+                style: TextStyle(
+                  color: carosultextColor,
+                ),
+              ))
+        ],
       ),
     );
   }
