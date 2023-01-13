@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
-import 'package:travel_ui/Screen/controller/home_controller.dart';
+
 import 'package:travel_ui/core/const/colors.dart';
 import 'package:travel_ui/core/const/size.dart';
 
@@ -9,12 +8,12 @@ class HomeListView extends StatelessWidget {
     Key? key,
     required this.width,
     required this.height,
-    required this.homeContorller,
+    required this.images,
   }) : super(key: key);
 
   final double width;
   final double height;
-  final HomeController homeContorller;
+  final List<String> images;
 
   @override
   Widget build(BuildContext context) {
@@ -23,7 +22,7 @@ class HomeListView extends StatelessWidget {
       maxHeight: height * 0.4,
       child: ListView(
         scrollDirection: Axis.horizontal,
-        children: List.generate(homeContorller.gridtravelImage.length, (index) {
+        children: List.generate(images.length, (index) {
           return Padding(
             padding: const EdgeInsets.all(8.0),
             child: Column(
@@ -35,9 +34,7 @@ class HomeListView extends StatelessWidget {
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(20),
                     image: DecorationImage(
-                        image:
-                            NetworkImage(homeContorller.gridtravelImage[index]),
-                        fit: BoxFit.cover),
+                        image: NetworkImage(images[index]), fit: BoxFit.cover),
                   ),
                 ),
                 kHeight5,

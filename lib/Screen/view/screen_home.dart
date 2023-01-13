@@ -62,7 +62,7 @@ class ScreenHome extends StatelessWidget {
                   HomeListView(
                     width: width,
                     height: height,
-                    homeContorller: homeContorller,
+                   images: homeContorller.gridtravelImage,
                   ),
                 ],
               ),
