@@ -33,6 +33,7 @@ class HomeListView extends StatelessWidget {
                 text,
                 style: const TextStyle(
                   color: serchColor,
+                  fontWeight: FontWeight.bold,
                   fontSize: 18,
                 ),
               ),
