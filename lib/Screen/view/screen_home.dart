@@ -34,15 +34,7 @@ class ScreenHome extends StatelessWidget {
                   HomeCarousal(
                       contorller: homeContorller, width: width, height: height),
                   kHeight5,
-                  AnimatedSmoothIndicator(
-                    activeIndex: homeContorller.activeIndex,
-                    count: homeContorller.travelImage.length,
-                    effect: const WormEffect(
-                        dotHeight: 10,
-                        dotWidth: 10,
-                        dotColor: elevatedColor,
-                        activeDotColor: serchColor),
-                  ),
+                  AnimationIndicator(homeContorller: homeContorller),
                   kHeight10,
                   kHeight10,
                   HomeListView(
@@ -68,6 +60,28 @@ class ScreenHome extends StatelessWidget {
           ),
         ),
       ),
+    );
+  }
+}
+
+class AnimationIndicator extends StatelessWidget {
+  const AnimationIndicator({
+    Key? key,
+    required this.homeContorller,
+  }) : super(key: key);
+
+  final HomeController homeContorller;
+
+  @override
+  Widget build(BuildContext context) {
+    return AnimatedSmoothIndicator(
+      activeIndex: homeContorller.activeIndex,
+      count: homeContorller.travelImage.length,
+      effect: const WormEffect(
+          dotHeight: 10,
+          dotWidth: 10,
+          dotColor: elevatedColor,
+          activeDotColor: serchColor),
     );
   }
 }
