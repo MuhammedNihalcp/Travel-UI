@@ -10,6 +10,12 @@ class ScreenSplash extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: backgroundColor,
-    body: SafeArea(child: Center()),);
+      body: SafeArea(
+          child: Center(
+        child: Image(
+            image: AssetImage(
+                'assets/images/Screenshot_2023-01-13-20-39-39-93_40deb401b9ffe8e1df2f1cc5ba480b12.jpg')),
+      )),
+    );
   }
 }

@@ -1,6 +1,6 @@
 import 'package:flutter/widgets.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
-import 'package:travel_ui/Screen/controller/home_controller.dart';
+import 'package:travel_ui/Screen/controller/home_controller/home_controller.dart';
 import 'package:travel_ui/core/const/colors.dart';
 
 class AnimationIndicator extends StatelessWidget {
