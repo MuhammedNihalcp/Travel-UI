@@ -31,7 +31,7 @@ class HomeCarousal extends StatelessWidget {
                 image: NetworkImage(contorller.travelImage[index]),
                 fit: BoxFit.cover,
               ),
-              borderRadius: BorderRadius.circular(20),
+              borderRadius: BorderRadius.circular(10),
             ),
           ),
           options: CarouselOptions(

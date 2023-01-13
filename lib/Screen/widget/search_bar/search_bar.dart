@@ -19,11 +19,11 @@ class SearchBar extends StatelessWidget {
           alignment: Alignment.centerLeft,
           backgroundColor: MaterialStateProperty.all(backgroundColor),
           fixedSize: MaterialStateProperty.all(
-            Size(width, height * 0.1),
+            Size(width, height * 0.08),
           ),
           shape: MaterialStateProperty.all(
             RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(20),
+              borderRadius: BorderRadius.circular(10),
               side: const BorderSide(
                 color: serchColor,
                 width: 2,

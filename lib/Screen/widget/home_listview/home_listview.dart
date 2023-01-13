@@ -55,7 +55,7 @@ class HomeListView extends StatelessWidget {
                       width: width * 0.35,
                       height: height * 0.25,
                       decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(20),
+                        borderRadius: BorderRadius.circular(10),
                         image: DecorationImage(
                             image: NetworkImage(images[index]),
                             fit: BoxFit.cover),
