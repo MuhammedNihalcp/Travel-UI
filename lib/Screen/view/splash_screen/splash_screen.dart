@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
+
 import 'package:get/get.dart';
 import 'package:travel_ui/Screen/controller/splash_controller/splash_contorller.dart';
 import 'package:travel_ui/core/const/colors.dart';
