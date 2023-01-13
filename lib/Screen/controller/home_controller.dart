@@ -20,6 +20,15 @@ class HomeController extends GetxController {
     'https://www.whatspaper.com/wp-content/uploads/2022/08/hd-travel-wallpaper-whatspaper-3.jpg',
     'https://w0.peakpx.com/wallpaper/451/131/HD-wallpaper-travel-often-arrow-highway-inspiration-journey-motivation-mountain-quotes-road-sayings-thumbnail.jpg',
   ];
+
+  final gridtravelImage2 = [
+    'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQPpE4u767vYGJTjhFlrBzcd1AAv0IWUEF-dg&usqp=CAU',
+    'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcToWeA8bldYOReMkh7plTOb_m9p5rTKtMVvtA&usqp=CAU',
+    'https://im.whatshot.in/img/2020/Mar/11111968-1577584319174693-249889397521196772-o-palmwood-cropped-2-1583914002.jpg',
+    'https://www.thebrokebackpacker.com/wp-content/uploads/2019/06/where-to-stay-mumbai-pin.jpg',
+    'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSAXmkMO3smWCuo7E24xE-wndYChLcfXaRU3g&usqp=CAU',
+    'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRbs3YEQB_KDM7SJHe7D8-pBCz3yoKccPjOSw&usqp=CAU',
+  ];
   int activeIndex = 0;
   void changeIndex(index) {
     activeIndex = index;

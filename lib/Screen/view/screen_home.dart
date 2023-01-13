@@ -44,25 +44,23 @@ class ScreenHome extends StatelessWidget {
                         activeDotColor: serchColor),
                   ),
                   kHeight10,
-                  Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Row(
-                      children: const [
-                        Text(
-                          'Happening Tomorrow, near you',
-                          style: TextStyle(
-                            color: serchColor,
-                            fontSize: 18,
-                          ),
-                        ),
-                      ],
-                    ),
+                  kHeight10,
+                  HomeListView(
+                    width: width,
+                    height: height,
+                    images: homeContorller.gridtravelImage,
+                    text: 'Happening Tomorrow, near you',
+                    desctription: 'Kayaking in back water, Adyar Boat Club',
+                    price: '1250 / Person',
                   ),
                   kHeight10,
                   HomeListView(
                     width: width,
                     height: height,
-                   images: homeContorller.gridtravelImage,
+                    images: homeContorller.gridtravelImage2,
+                    text: 'Stay suggestions for you',
+                    desctription: 'Nodia Hills, Karanataka, india',
+                    price: 'Rs 13,254 / Days',
                   ),
                 ],
               ),

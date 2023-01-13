@@ -4,77 +4,102 @@ import 'package:travel_ui/core/const/colors.dart';
 import 'package:travel_ui/core/const/size.dart';
 
 class HomeListView extends StatelessWidget {
-  const HomeListView({
-    Key? key,
-    required this.width,
-    required this.height,
-    required this.images,
-  }) : super(key: key);
+  const HomeListView(
+      {Key? key,
+      required this.width,
+      required this.height,
+      required this.images,
+      required this.text,
+      required this.desctription,
+      required this.price})
+      : super(key: key);
 
   final double width;
   final double height;
   final List<String> images;
+  final String text;
+  final String desctription;
+  final String price;
 
   @override
   Widget build(BuildContext context) {
-    return LimitedBox(
-      maxWidth: width * 0.5,
-      maxHeight: height * 0.4,
-      child: ListView(
-        scrollDirection: Axis.horizontal,
-        children: List.generate(images.length, (index) {
-          return Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Container(
-                  width: width * 0.35,
-                  height: height * 0.25,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(20),
-                    image: DecorationImage(
-                        image: NetworkImage(images[index]), fit: BoxFit.cover),
-                  ),
+    return Column(
+      children: [
+        Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Row(
+            children: [
+              Text(
+                text,
+                style: const TextStyle(
+                  color: serchColor,
+                  fontSize: 18,
                 ),
-                kHeight5,
-                SizedBox(
-                  width: width * 0.35,
-                  child: const Text(
-                    'Kayking in back water, Adyar Boat club',
-                    maxLines: 2,
-                    overflow: TextOverflow.clip,
-                    style: TextStyle(
-                      color: serchColor,
-                      fontWeight: FontWeight.bold,
+              ),
+            ],
+          ),
+        ),
+        LimitedBox(
+          maxWidth: width * 0.5,
+          maxHeight: height * 0.4,
+          child: ListView(
+            scrollDirection: Axis.horizontal,
+            children: List.generate(images.length, (index) {
+              return Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Container(
+                      width: width * 0.35,
+                      height: height * 0.25,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(20),
+                        image: DecorationImage(
+                            image: NetworkImage(images[index]),
+                            fit: BoxFit.cover),
+                      ),
                     ),
-                  ),
-                ),
-                kHeight2,
-                const Text(
-                  'Rs 1250 / Person',
-                  style: TextStyle(color: serchColor),
-                ),
-                kHeight2,
-                Row(
-                  children: const [
-                    Icon(
-                      Icons.star_border,
-                      size: 15,
-                      color: serchColor,
+                    kHeight5,
+                    SizedBox(
+                      width: width * 0.35,
+                      child: Text(
+                        desctription,
+                        maxLines: 2,
+                        overflow: TextOverflow.clip,
+                        style: const TextStyle(
+                          color: serchColor,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
                     ),
-                    kWidth4,
+                    kHeight2,
                     Text(
-                      '4.92(31)',
-                      style: TextStyle(color: serchColor),
+                      price,
+                      style: const TextStyle(color: serchColor),
+                    ),
+                    kHeight2,
+                    Row(
+                      children: const [
+                        Icon(
+                          Icons.star_border,
+                          size: 15,
+                          color: serchColor,
+                        ),
+                        kWidth4,
+                        Text(
+                          '4.9(32)',
+                          style: TextStyle(color: serchColor),
+                        )
+                      ],
                     )
                   ],
-                )
-              ],
-            ),
-          );
-        }),
-      ),
+                ),
+              );
+            }),
+          ),
+        ),
+      ],
     );
   }
 }
