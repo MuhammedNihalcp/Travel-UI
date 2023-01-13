@@ -33,6 +33,7 @@ class HomeCarousal extends StatelessWidget {
               ),
               borderRadius: BorderRadius.circular(10),
             ),
+            child: CarousalText(height: height, width: width),
           ),
           options: CarouselOptions(
             height: height * 0.28,
@@ -53,7 +54,6 @@ class HomeCarousal extends StatelessWidget {
             scrollDirection: Axis.horizontal,
           ),
         ),
-        CarousalText(height: height, width: width),
       ],
     );
   }

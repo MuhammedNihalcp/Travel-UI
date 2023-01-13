@@ -14,11 +14,11 @@ class CarousalText extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Positioned(
-      top: height * 0.14,
-      left: width * 0.05,
+    return Padding(
+      padding: const EdgeInsets.all(10.0),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
+        mainAxisAlignment: MainAxisAlignment.end,
         children: [
           const Text(
             'Run to the Hills',
