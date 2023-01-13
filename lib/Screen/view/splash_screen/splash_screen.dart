@@ -1,14 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
+import 'package:get/get.dart';
+import 'package:travel_ui/Screen/controller/splash_controller/splash_contorller.dart';
 import 'package:travel_ui/core/const/colors.dart';
 
 class ScreenSplash extends StatelessWidget {
-  const ScreenSplash({super.key});
+  ScreenSplash({super.key});
+
+  final splashC = Get.put(SplashContorller());
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
+      splashC.splashTimer();
+    });
+    return const Scaffold(
       backgroundColor: backgroundColor,
       body: SafeArea(
           child: Center(
