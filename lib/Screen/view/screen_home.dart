@@ -1,8 +1,8 @@
-import 'package:carousel_slider/carousel_slider.dart';
+
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
-import 'package:smooth_page_indicator/smooth_page_indicator.dart';
+
 import 'package:travel_ui/Screen/controller/home_controller.dart';
 import 'package:travel_ui/Screen/widget/animation_indicator/animation_indicator.dart';
 import 'package:travel_ui/Screen/widget/home_carousal/home_carousal.dart';

@@ -2,7 +2,7 @@ import 'package:carousel_slider/carousel_slider.dart';
 
 import 'package:flutter/widgets.dart';
 import 'package:travel_ui/Screen/controller/home_controller.dart';
-import 'package:travel_ui/Screen/view/screen_home.dart';
+
 import 'package:travel_ui/Screen/widget/carousal_text/carousal_text.dart';
 
 class HomeCarousal extends StatelessWidget {
