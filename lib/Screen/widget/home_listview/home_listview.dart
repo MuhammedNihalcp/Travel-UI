@@ -74,12 +74,12 @@ class HomeListView extends StatelessWidget {
                         ),
                       ),
                     ),
-                    kHeight2,
+                    kHeight4,
                     Text(
                       price,
                       style: const TextStyle(color: serchColor),
                     ),
-                    kHeight2,
+                    kHeight4,
                     Row(
                       children: const [
                         Icon(
